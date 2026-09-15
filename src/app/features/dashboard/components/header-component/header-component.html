@@ -1,0 +1,16 @@
+<div class="header-container">
+    <div class="auth-container">
+        @if (name == "") {
+            <div class="auth-buttons">
+                <button class="logIn-button" routerLink="/login">Log in</button>
+                <button class="signup-button" routerLink="/reg">Sign up</button>
+            </div>
+        }
+        @else {
+            <div class="account-container">
+                <p>{{name}}</p>
+            </div>
+        }
+    </div>
+    <h1>Url shortener</h1>
+</div>
