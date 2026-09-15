@@ -1,5 +1,5 @@
-import { Component, Input, input } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, inject, Input, input } from '@angular/core';
+import { RouterLink, Router } from '@angular/router';
 
 @Component({
   imports: [RouterLink],
@@ -8,6 +8,12 @@ import { RouterLink } from '@angular/router';
   templateUrl: './header-component.html',
 })
 export class HeaderComponent {
-  @Input() name: string = "";
+  name: string | null = localStorage.getItem("username");
 
+  private readonly _router = inject(Router);
+  onLogOut(){
+    this._router.navigate(['/dashboard']);
+    localStorage.clear();
+    window.location.reload();
+  }
 }

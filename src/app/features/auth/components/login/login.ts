@@ -29,7 +29,7 @@ export class Login {
         next: (response: UserResponseModel) => {
           localStorage.setItem('token', response.token);
           localStorage.setItem('userId', response.id.toString());
-          localStorage.setItem('username', response.name);
+          localStorage.setItem('username', response.username);
           this._router.navigate(['/dashboard'])
         },
         error: (error) => {

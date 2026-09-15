@@ -48,6 +48,11 @@
   color: #1f2937;
 }
 
+.logOut-button{
+  background-color: black;
+  color: white;
+}
+
 .signup-button {
   background-color: #3b82f6;
   color: #ffffff;

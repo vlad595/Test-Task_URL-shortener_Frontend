@@ -1,12 +1,13 @@
 <div class="header-container">
     <div class="auth-container">
-        @if (name == "") {
+        @if (name == null) {
             <div class="auth-buttons">
                 <button class="logIn-button" routerLink="/login">Log in</button>
                 <button class="signup-button" routerLink="/reg">Sign up</button>
             </div>
         }
         @else {
+            <button class="logOut-button" (click)="onLogOut()">Log out</button>
             <div class="account-container">
                 <p>{{name}}</p>
             </div>

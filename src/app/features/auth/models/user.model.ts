@@ -1,6 +1,6 @@
 export interface UserResponseModel{
     id: number;
-    name: string;
+    username: string;
     email: string;
     token: string;
 }
@@ -11,7 +11,7 @@ export interface UserLoginModel{
 }
 
 export interface UserRegistrationModel{
-    name: string;
+    username: string;
     email: string;
     password: string;
 }

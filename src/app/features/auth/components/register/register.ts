@@ -23,7 +23,7 @@ export class Register {
   onSubmit(){
     if (this.loginForm.valid){
       const userLoginModel: UserRegistrationModel = {
-        name: this.loginForm.value.name!,
+        username: this.loginForm.value.name!,
         email: this.loginForm.value.email!,
         password: this.loginForm.value.password!
       }
@@ -32,7 +32,7 @@ export class Register {
         next: (response: UserResponseModel) => {
           localStorage.setItem('token', response.token);
           localStorage.setItem('userId', response.id.toString());
-          localStorage.setItem('username', response.name);
+          localStorage.setItem('username', response.username);
           this._router.navigate(['/dashboard'])
         },
         error: (error) => {
