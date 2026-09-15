@@ -3,7 +3,7 @@ import { RouterOutlet } from '@angular/router';
 import { Login } from './features/auth/components/login/login';
 
 @Component({
-  imports: [],
+  imports: [RouterOutlet],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
