@@ -1,1 +1,20 @@
-<p>urls-board works!</p>
+<div class="list-container">
+  <h2 class="list-title">My Links</h2>
+
+  <div class="url-grid">
+    @for (link of links$ | async; track link.shortenedUrl) {
+      
+      <app-url-component
+        [originalUrl]="link.originalUrl"
+        [shortenedUrl]="link.shortenedUrl"
+        [createdAt]="link.createdAt"
+        [clickCount]="link.clickCount">
+      </app-url-component>
+
+    } @empty {
+      <div class="empty-state">
+        <p>There is no shortened links yet.</p>
+      </div>
+    }
+  </div>
+</div>

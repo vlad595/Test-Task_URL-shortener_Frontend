@@ -1,1 +1,25 @@
-<p>url-creation works!</p>
+<div class="shortener-container">
+  <div class="shortener-card">
+    <h2>Shorten your long links</h2>
+    
+    <form class="shortener-form" [formGroup]="urlForm" (ngSubmit)="onSubmit()">
+      <input 
+        type="url" 
+        placeholder="Paste your long URL here..." 
+        required
+        formControlName="originalUrl"
+      >
+      <button type="submit" class="shorten-button">Shorten URL</button>
+    </form>
+
+    @if (shortenedUrl | async) {
+      <div class="result-container">
+        <p>Your shortened URL:</p>
+        <div class="result-box">
+          <a [href]="shortenedUrl | async" target="_blank">{{ shortenedUrl | async}}</a>
+          <button class="copy-button" (click)="copyUrl()">Copy</button>
+        </div>
+      </div>
+    }
+  </div>
+</div>

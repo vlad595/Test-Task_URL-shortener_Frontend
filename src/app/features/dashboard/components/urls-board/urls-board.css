@@ -1,0 +1,29 @@
+.list-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}
+
+.list-title {
+  font-size: 1.5rem;
+  color: #1f2937;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.url-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px;
+  background-color: #f9fafb;
+  border-radius: 12px;
+  border: 1px dashed #d1d5db;
+  color: #6b7280;
+  font-size: 1rem;
+}

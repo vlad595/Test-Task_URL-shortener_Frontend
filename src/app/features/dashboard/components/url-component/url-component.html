@@ -1,1 +1,21 @@
-<p>url-component works!</p>
+<div class="url-card">
+  <div class="card-header">
+    <a [href]="originalUrl" target="_blank" class="original-url" [title]="originalUrl">
+      {{ originalUrl }}
+    </a>
+  </div>
+
+  <div class="card-body">
+    <a [href]="shortenedUrl" target="_blank" class="short-url">
+      {{ shortenedUrl }}
+    </a>
+    <button class="copy-btn" (click)="copyUrl()">Copy</button>
+  </div>
+
+  <div class="card-footer">
+    <div class="date">{{ createdAt }}</div>
+    <div class="click-stats">
+      <span class="click-count">{{ clickCount }}</span> clicks
+    </div>
+  </div>
+</div>
