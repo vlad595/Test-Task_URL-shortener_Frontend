@@ -3,6 +3,7 @@ export interface UserResponseModel{
     username: string;
     email: string;
     token: string;
+    role: number;
 }
 
 export interface UserLoginModel{

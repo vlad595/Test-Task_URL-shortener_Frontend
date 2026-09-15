@@ -30,6 +30,11 @@ export class UrlService {
         );
     }
     deleteUrl(id: string): Observable<UrlResponseModel>{
-        return this.http.delete<UrlResponseModel>(this.apiUrl + '/Url');
+        return this.http.delete<UrlResponseModel>(this.apiUrl + '/Url?id=' + id).pipe(
+            tap(url =>{
+                const currentUrls = this.urlsSubject.value.filter(url => url.id != id);
+                this.urlsSubject.next([...currentUrls]);
+            })
+        );
     }
 }

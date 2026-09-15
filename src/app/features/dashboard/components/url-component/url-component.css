@@ -99,3 +99,27 @@
   border-radius: 999px; 
   font-weight: 700;
 }
+
+.card-header{
+  display: flex;
+  flex-direction: row;
+}
+
+.delete-btn {
+  padding: 8px 16px;
+  background-color: #ff7272;
+  color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+.delete-btn:hover {
+  background-color: #e5e7eb;
+  color: #1f2937;
+}

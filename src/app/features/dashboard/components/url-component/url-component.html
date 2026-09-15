@@ -3,6 +3,9 @@
     <a [href]="originalUrl" target="_blank" class="original-url" [title]="originalUrl">
       {{ originalUrl }}
     </a>
+    @if (authorId == userId || userRole == '0') {
+      <button class="delete-btn" (click)="deleteUrl()">delete</button>
+    } 
   </div>
 
   <div class="card-body">
