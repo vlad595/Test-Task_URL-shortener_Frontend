@@ -17,6 +17,9 @@ export class UrlCreation {
 
   private readonly service = inject(UrlService);
 
+  toastSubject = new BehaviorSubject<boolean>(false);
+  showToast = this.toastSubject.asObservable();
+
   links$ = this.service.links$;
 
   urlForm = new FormGroup({
@@ -26,6 +29,10 @@ export class UrlCreation {
   async copyUrl(){
     try{
       await navigator.clipboard.writeText(this.ulrSubject.value);
+      this.toastSubject.next(true);
+      setTimeout(() => {
+        this.toastSubject.next(false);
+      }, 2500);
     }catch(error){
       console.error('Failed to copy url: ', error);
     }

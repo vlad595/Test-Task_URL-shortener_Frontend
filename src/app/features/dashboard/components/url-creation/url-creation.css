@@ -142,3 +142,40 @@
     margin-top: 8px;
   }
 }
+
+.toast-notification {
+  position: fixed;
+  bottom: 30px;
+  left: 50%; 
+  transform: translateX(-50%); 
+  
+  background-color: #3f3f3fdc;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 500;
+  box-shadow: 0 4px 12px rgba(37, 37, 37, 0.3);
+  z-index: 9999;
+
+  animation: slide-up-fade 2.5s ease-in-out forwards;
+}
+
+@keyframes slide-up-fade {
+  0% {
+    opacity: 0;
+    bottom: 10px;
+  }
+  15% {
+    opacity: 1;
+    bottom: 30px;
+  }
+  85% {
+    opacity: 1;
+    bottom: 30px; 
+  }
+  100% {
+    opacity: 0;
+    bottom: 10px; 
+  }
+}

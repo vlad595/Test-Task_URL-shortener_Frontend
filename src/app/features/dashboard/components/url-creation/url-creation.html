@@ -12,7 +12,7 @@
       <button type="submit" class="shorten-button">Shorten URL</button>
     </form>
 
-    @if ((shortenedUrl | async) != 'error:401') {
+    @if ((shortenedUrl | async) && (shortenedUrl | async) != 'error:401') {
       <div class="result-container">
         <p>Your shortened URL:</p>
         <div class="result-box">
@@ -29,3 +29,6 @@
     }
   </div>
 </div>
+@if (showToast | async) {
+  <div class="toast-notification">Link copied!</div>
+}
