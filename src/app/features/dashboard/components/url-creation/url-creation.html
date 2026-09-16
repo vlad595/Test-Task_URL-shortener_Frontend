@@ -12,13 +12,19 @@
       <button type="submit" class="shorten-button">Shorten URL</button>
     </form>
 
-    @if (shortenedUrl | async) {
+    @if ((shortenedUrl | async) != 'error:401') {
       <div class="result-container">
         <p>Your shortened URL:</p>
         <div class="result-box">
           <a [href]="shortenedUrl | async" target="_blank">{{ shortenedUrl | async}}</a>
           <button class="copy-button" (click)="copyUrl()">Copy</button>
         </div>
+      </div>
+    }
+    @if ((shortenedUrl | async) == 'error:401'){
+      <div>
+        <h1>You are not authorized</h1>
+        <p>Sorry, you have to log in to create short urls.</p>
       </div>
     }
   </div>

@@ -43,6 +43,9 @@ export class UrlCreation {
         },
         error: (error) => {
           console.error('Processing url error: ', error);
+          if (error = '401'){
+            this.ulrSubject.next('error:401');
+          }
         }
       });
     }
